@@ -61,9 +61,3 @@ phases:
      # - mysqladmin -u test create test
      - ./vendor/bin/phpunit
      
-     artifacts:
-  files:
-    - '**/*'
-  base-directory: base_dir
-  name: build-artifact-name
-  discard-paths: no
