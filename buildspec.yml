@@ -61,3 +61,10 @@ phases:
      # - mysqladmin -u test create test
      - ./vendor/bin/phpunit
      
+     post_build:
+    commands:
+      - printf '[{"name":"your.task.definition.name","imageUri":"%s"}]' $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME:$IMAGE_TAG > imagedefinitions.json
+
+artifacts:
+    files: imagedefinitions.json
+     
